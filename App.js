@@ -16,17 +16,24 @@ import SearchInput from "./components/SearchInput";
 import { fetchLocationId, fetchWeather } from "./utils/api";
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { location: "" };
-    this.state = {
-      loading: false,
-      error: false,
-      location: "",
-      temparature: 0,
-      weather: "",
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     loading: false,
+  //     error: false,
+  //     location: "",
+  //     temparature: 0,
+  //     weather: "",
+  //   };
+  // }
+
+  state = {
+    loading: false,
+    error: false,
+    location: "",
+    temparature: 0,
+    weather: "",
+  };
 
   componentDidMount() {
     ///this.handleUpdateLocation("Chennai");
@@ -93,10 +100,7 @@ export default class App extends React.Component {
                 )}
               </View>
             )}
-            <SearchInput
-              placeholder="Search city"
-              onSubmit={this.handleUpdateLocation}
-            />
+            <SearchInput onSubmit={this.handleUpdateLocation} />
           </View>
         </ImageBackground>
       </KeyboardAvoidingView>
